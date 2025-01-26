@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <title>Lucro e Prejuízo</title>
+</head>
+<body>
+    <h1>Análise  FastShop </h1>
+
+    <table id="data-table" border="1" style="width: 100%;">
+        <thead>
+            <tr>
+                <th>Nome do Produto</th>
+                <th>Fabricante</th>
+                <th>Preço de Compra (R$)</th>
+                <th>Preço de Venda (R$)</th>
+                <th>Lucro (%)</th>
+                <th>Prejuízo (%)</th>
+                <th>Observação</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <div class="chart-container">
+      <canvas id="profitLossChart"></canvas>
+  </div>
+
+  <div class="button-container">
+    <button id="downloadPdf">Baixar PDF</button>
+    <button id="downloadCsv">Baixar CSV</button>
+  </div>
+
+
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
