@@ -1,6 +1,4 @@
-Aqui está o README revisado, mais detalhado e completo:
 
----
 
 # Sistema de Análise de Preço de Custo e Preço de Venda
 
