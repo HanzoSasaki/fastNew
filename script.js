@@ -1,6 +1,6 @@
 const data = [
   { "name": "Produto A", "manufacturer": "Fabricante X", "cost": 10.5, "sale": 15.0, "note": "Bom desempenho" },
-  { "name": "Produto B", "manufacturer": "Fabricante Y", "cost": 8.0, "sale": 7.5, "note": "Reduzir preço" },
+  { "name": "Produto B", "manufacturer": "Fabricante Y", "cost": 8.0, "sale": 7.5, "note": "subir preço de venda" },
   { "name": "Produto C", "manufacturer": "Fabricante Z", "cost": 20.0, "sale": 25.0, "note": "Manter preço" }
 ];
 
