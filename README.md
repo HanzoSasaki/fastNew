@@ -1,92 +1,68 @@
+# Sistema de Visualização de Lucros e Prejuízos Diários
 
+Este sistema é uma ferramenta robusta para monitorar, calcular e visualizar lucros e prejuízos de um negócio de forma detalhada e eficiente. Conta com funcionalidades gráficas, integrações com arquivos JSON e planilhas, bem como a possibilidade de expansão para novas funcionalidades.
 
-# Sistema de Análise de Preço de Custo e Preço de Venda
+## Funcionalidades Atuais
 
-Este sistema é uma ferramenta simples e prática para calcular lucros, prejuízos e fornecer sugestões de promoções baseadas na diferença entre o preço de custo e o preço de venda de um produto. Além disso, ele oferece a possibilidade de exportar os resultados em formatos CSV e PDF para facilitar o controle e análise dos dados.
+- **Entrada de Dados:** Possibilidade de subir arquivos JSON para alimentar os dados diários do sistema.
+- **Transformador de Dados:** Ferramenta para converter dados em formatos padronizados, facilitando a integração e o processamento.
+- **Visualização Gráfica:** Exibição dos dados financeiros em gráficos interativos para facilitar a análise.
+- **Atualização por Planilhas:** Importação de dados de planilhas já formatadas, permitindo atualizações rápidas e precisas.
+- **Integração com Sistemas:** Conexão com diversos sistemas para garantir uma visualização centralizada dos dados financeiros.
+- **Cálculo Automático de Impostos:** Uma I.A. integrada calcula os impostos incidentes com base nas informações financeiras fornecidas, garantindo a precisão dos valores e reduzindo riscos de erros.
+- **Segurança de Dados:** Implementação de criptografia MD5 para proteger os dados, com liberação de visualização por IP.
+- **Exportação de Dados:** Possibilidade de exportar relatórios detalhados em formatos CSV e PDF.
+- **Backup de Dados:** Mecanismo de contenção de dados para evitar perda de informações.
 
-## Funcionalidades
+## Arquitetura Prevista para o Futuro
 
-1. **Entrada de Dados**: O usuário pode inserir o preço de custo e o preço de venda de um produto.
-2. **Cálculo Automático de Lucro e Prejuízo**: O sistema calcula automaticamente o lucro ou prejuízo percentual baseado nos valores inseridos.
-3. **Sugestões de Promoção**: O sistema fornece sugestões sobre a necessidade de aplicar promoções com base nos cálculos de lucro ou prejuízo.
-4. **Exibição de Resultados**: Os resultados da análise são exibidos diretamente em uma tabela, incluindo os dados de lucro, prejuízo e sugestão de promoção.
-5. **Gráfico Interativo**: O sistema gera um gráfico de barras mostrando o lucro ou prejuízo de cada produto, ajudando na visualização dos dados de forma clara e eficiente.
-6. **Exportação de Resultados**: É possível exportar a tabela de resultados para um arquivo CSV ou PDF para facilitar o controle financeiro e análises futuras.
-7. **Segurança dos Dados**: Após a análise, os dados são apagados automaticamente para garantir a segurança e privacidade dos usuários, já que o sistema não armazena informações permanentemente.
+- **Docker:** Contenerização do sistema para manuseio eficiente de grandes volumes de dados.
+- **Inteligência Artificial Avançada:** Expansão das funções da I.A. para realizar sugestões de promoção e previsão de vendas, além dos cálculos atuais.
+- **Integração com Dispositivos Móveis:** Visualização responsiva via celular para consultas rápidas e práticas.
 
 ## Fluxo de Uso
 
-1. **Entrada de Dados**: O usuário insere o preço de custo e o preço de venda dos produtos.
-2. **Cálculo Automático**: O sistema calcula automaticamente o lucro ou prejuízo em porcentagem com base nos valores inseridos.
-3. **Sugestão de Promoção**: O sistema sugere se o preço deve ser mantido ou se uma promoção deve ser aplicada, dependendo da análise de lucro ou prejuízo.
-4. **Exibição de Resultados**: Após o cálculo, os resultados são exibidos em uma tabela.
-5. **Exportação de Dados**: O usuário pode baixar os resultados da análise em formato CSV ou PDF.
-6. **Segurança e Privacidade**: Os dados inseridos são apagados após cada análise, garantindo a privacidade e segurança do usuário.
+1. **Upload de Dados:** O usuário pode carregar arquivos JSON com informações financeiras ou atualizar dados via planilhas.
+2. **Processamento:** A I.A. realiza os cálculos automáticos de lucros, prejuízos e impostos incidentes.
+3. **Visualização:** Os dados são exibidos em gráficos interativos e tabelas detalhadas.
+4. **Exportação:** Relatórios podem ser exportados em formatos CSV ou PDF.
+5. **Segurança:** Dados são criptografados com MD5 e visualização controlada por IP.
 
-## Cálculos
+## Exemplo de Cálculo de Impostos
 
-O sistema realiza os seguintes cálculos para determinar o lucro ou prejuízo:
+A I.A. utiliza as alíquotas configuradas para calcular os impostos automaticamente:
 
-- **Lucro (%)**:
+### Fórmula Genérica:
+
+```
+Imposto Total = Receita Bruta * Alíquota Total / 100
+```
+
+**Exemplo:**
+Se a receita bruta for R$ 10.000,00 e a alíquota total de impostos for 15%, temos:
+```
+Imposto Total = 10.000 * 15 / 100 = R$ 1.500,00
+```
+
+## Tecnologias Utilizadas
+
+- **Frontend:**
+  - HTML, CSS e JavaScript para interface amigável.
+  - Chart.js para exibição de gráficos interativos.
+  - jsPDF para exportação de relatórios em PDF.
+
+- **Backend:**
+  - Integração com sistemas para recebimento e processamento de dados.
+  - Algoritmos de inteligência artificial para cálculos automatizados.
   
-  \[
-  \text{Lucro (\%)} = \left( \frac{{\text{Preço de Venda} - \text{Preço de Custo}}}{{\text{Preço de Custo}}} \right) \times 100
-  \]
-
-- **Prejuízo (%)**:
-
-  \[
-  \text{Prejuízo (\%)} = \left( \frac{{\text{Preço de Custo} - \text{Preço de Venda}}}{{\text{Preço de Custo}}} \right) \times 100
-  \]
-
-### Exemplo de Cálculo
-
-| Preço de Custo | Preço de Venda | Lucro (%) | Prejuízo (%) | Sugestão de Promoção |
-|----------------|----------------|-----------|--------------|----------------------|
-| R$ 10,00       | R$ 20,00       | 100.00%   | 0.00%        | Manter Preço         |
-| R$ 20,00       | R$ 15,00       | 0.00%     | 25.00%       | Aplicar Promoção     |
-
-No exemplo acima, temos dois produtos com diferentes margens de lucro e prejuízo. O primeiro produto gera um lucro de 100%, enquanto o segundo produto apresenta um prejuízo de 25%, sugerindo uma promoção para recuperar o valor perdido.
-
-## Arquitetura do Sistema
-
-O sistema foi desenvolvido para ser simples e fácil de usar, utilizando tecnologias populares do frontend para garantir uma boa experiência ao usuário.
-
-### Estrutura do Código
-
-- **Frontend**:
-  - **HTML**: Responsável pela estrutura da página, incluindo a tabela de produtos, botões de download e o gráfico.
-  - **CSS**: Estilo visual da página, com design moderno, responsivo e uso de cores em degradê.
-  - **JavaScript**:
-    - Manipulação da tabela para entrada de dados e cálculos.
-    - Geração de gráficos interativos usando a biblioteca Chart.js.
-    - Funções para exportação de dados em formato CSV e PDF.
-
-### Tecnologias Utilizadas
-
-- **Frontend**:
-  - **HTML**: Estrutura da página.
-  - **CSS**: Design responsivo com cores em degradê, adaptável a diferentes dispositivos.
-  - **JavaScript**: Manipulação dinâmica de dados, cálculos financeiros e gráficos interativos.
-  - **Chart.js**: Biblioteca para geração de gráficos de barras.
-  - **jsPDF**: Para exportação de resultados em PDF.
-- **Backend (Futuro)**: Para armazenar dados e gerar relatórios persistentes, pode-se utilizar um banco de dados relacional (SQL), como MySQL, PostgreSQL ou SQLite.
-
-## Como Usar
-
-1. **Inserir Dados**: Digite os valores de preço de custo e preço de venda nos campos da tabela.
-2. **Visualizar Resultados**: O sistema calculará automaticamente o lucro ou prejuízo de cada produto.
-3. **Sugestões de Promoção**: O sistema exibirá sugestões de promoções baseadas nos cálculos de lucro ou prejuízo.
-4. **Baixar Planilha**: Após visualizar os resultados, você pode baixar uma planilha em CSV ou PDF com os dados de lucro, prejuízo e sugestão de promoção.
-5. **Resetar Dados**: Após cada análise, os dados inseridos são apagados automaticamente para garantir a segurança e privacidade.
-
 ## Futuras Melhorias
 
-1. **Implementação de Banco de Dados**: Armazenamento dos resultados das análises em um banco de dados relacional para gerar histórico e relatórios persistentes.
-2. **Segurança de Dados**: Implementação de criptografia e autenticação de usuários para garantir maior segurança no armazenamento e acesso aos dados.
-3. **Sugestões Avançadas de Promoção**: Criação de um algoritmo mais sofisticado que sugira promoções personalizadas com base em dados históricos de vendas.
-4. **Melhorias na Interface**: A interface será aprimorada para torná-la ainda mais interativa, fácil de usar e com gráficos adicionais.
+- **Docker:** Implementar contenerização para escalabilidade e suporte a grandes volumes.
+- **I.A. de Decisão:** Aperfeiçoar a inteligência artificial para oferecer previsões e sugestões automatizadas.
+- **Integrações Adicionais:** Conectar com mais sistemas externos conforme necessidade.
+- **Backup Automatizado:** Melhorias nos processos de backup para segurança de dados.
 
 ## Conclusão
 
-Este sistema de análise de preço de custo e preço de venda é uma ferramenta útil e simples para ajudar a calcular e entender a margem de lucro e prejuízo de um produto. Ele fornece sugestões de promoção baseadas na análise financeira e permite a exportação dos resultados para relatórios em formatos CSV ou PDF. Embora o sistema seja volátil, garantindo a segurança dos dados do usuário, ele oferece um ponto de partida para melhorias futuras, como o armazenamento de dados em banco de dados e algoritmos mais avançados para sugestões de promoções.
+O sistema de visualização de lucros e prejuízos é uma solução poderosa para monitoramento financeiro, com funções de segurança avançadas, cálculo automático de impostos por I.A., e integração com diversos sistemas. Ele oferece uma base robusta para expansão futura, buscando atender às necessidades do mercado de forma eficiente.
+
